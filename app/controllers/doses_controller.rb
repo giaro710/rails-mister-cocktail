@@ -8,7 +8,7 @@ class DosesController < ApplicationController
   def create
     @cocktail = Cocktail.find(params[:cocktail_id]) # lo metto in questo specifico cocktail
     @dose = Dose.new(dose_params)
-    @dose.cocktail = @cocktail
+    @dose.cocktail = @cocktail #in qesto modo alla dose assegno l'id del cocktail
 
      if @dose.save
       redirect_to cocktail_path(@dose.cocktail), notice: ' Restaurant was successfully added'
